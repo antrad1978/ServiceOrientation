@@ -28,7 +28,8 @@ public class Producer {
             messageProducer.close();
         }catch(IOException ex)
         {
-            System.out.println ("Well this error happened: " + ex.toString());
+            System.out.println (ex.toString());
+            ex.printStackTrace();
         }
     }
 
