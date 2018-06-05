@@ -1,0 +1,24 @@
+{"namespace": "example.avro",
+ "type": "record",
+ "name": "Order",
+ "fields": [
+     {"name": "customer", "type": "string"},
+     {"name": "date",  "type": ["string", "null"]},
+     {"name": "notes", "type": ["string", "null"]},
+     {"name":"Items",
+                 "type":{
+                     "type": "array",
+                     "items":{
+                         "name":"OrderItem",
+                         "type":"record",
+                         "fields":[
+                             {"name":"item", "type":"string"},
+                             {"name":"description", "type":"string"},
+                             {"name":"um", "type":"string"},
+                             {"name":"qtt", "type":"int"}
+                         ]
+                     }
+                 }
+                 }
+ ]
+}
