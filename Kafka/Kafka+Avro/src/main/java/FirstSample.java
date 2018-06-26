@@ -31,10 +31,10 @@ public class FirstSample {
             }
         }
 
-        // Deserialize Users from disk
-        DatumReader<Order> userDatumReader = new SpecificDatumReader<Order>(Order.class);
+        // Deserialize from disk
+        DatumReader<Order> orderSpecificDatumReader = new SpecificDatumReader<Order>(Order.class);
         try {
-            DataFileReader<Order> dataFileReader = new DataFileReader<Order>(new File("order.avro"), userDatumReader);
+            DataFileReader<Order> dataFileReader = new DataFileReader<Order>(new File("order.avro"), orderSpecificDatumReader);
             Order order2 = null;
             while (dataFileReader.hasNext()) {
                 order2 = dataFileReader.next(order2);
