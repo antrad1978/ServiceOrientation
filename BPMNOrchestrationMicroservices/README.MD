@@ -9,3 +9,7 @@ Sample contains a running in process instance of Activiti that support MySQL, th
 ## Timers and Service Tasks
 
 Process is running some timers and sample service tasks. In our scenario we prefer to drive process via intermediate message catch because this enable eventual consistency and monitoring capabilities. Time based conditions are driven via Activiti async executor.
+
+## Code
+
+Sample contains unit tests for processes scenarios and uses H2 in test environment.
