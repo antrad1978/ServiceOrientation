@@ -1,15 +1,17 @@
 package pharmacare.tasks.delegates;
 
+import java.util.Map;
+
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;
 
-public class ExpiredRequestDelegate  implements JavaDelegate {
+public class TreamentRequestDelegate implements JavaDelegate {
 	 
 		/* (non-Javadoc)
 		 * @see org.activiti.engine.delegate.JavaDelegate#execute(org.activiti.engine.delegate.DelegateExecution)
 		 */
 		public void execute(DelegateExecution delegateExecution) {
-	 
+			Map<String,Object> variables = delegateExecution.getTransientVariables();
 			System.out.println("Executed process with key "+
 								delegateExecution.getProcessInstanceBusinessKey()+
 								" with process definition Id "+
@@ -17,6 +19,10 @@ public class ExpiredRequestDelegate  implements JavaDelegate {
 								" with process instance Id "+delegateExecution.getProcessInstanceId()+
 								" and current task name is "+
 								delegateExecution.getCurrentActivityId());
+			for(String key : variables.keySet()) {
+				System.out.println(key + " : " + variables.get(key));
+			}
 	 
 		}	 
 }
+

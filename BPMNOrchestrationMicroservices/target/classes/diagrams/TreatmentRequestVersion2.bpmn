@@ -42,9 +42,11 @@
     </intermediateCatchEvent>
     <sequenceFlow id="flow47" sourceRef="eventGatewayAccept" targetRef="messageintermediatecatchevent3"></sequenceFlow>
     <intermediateThrowEvent id="noneintermediatethrowevent1" name="NoneThrowEvent"></intermediateThrowEvent>
-    <sequenceFlow id="flow51" sourceRef="startevent1" targetRef="noneintermediatethrowevent1"></sequenceFlow>
     <sequenceFlow id="flow52" sourceRef="messageintermediatecatchevent3" targetRef="noneintermediatethrowevent1"></sequenceFlow>
     <sequenceFlow id="flow55" sourceRef="noneintermediatethrowevent1" targetRef="messageintermediatecatchevent1"></sequenceFlow>
+    <serviceTask id="servicetask1" name="Update Request Process" activiti:class="pharmacare.tasks.delegates.TreamentRequestDelegate"></serviceTask>
+    <sequenceFlow id="flow56" sourceRef="servicetask1" targetRef="noneintermediatethrowevent1"></sequenceFlow>
+    <sequenceFlow id="flow57" sourceRef="startevent1" targetRef="servicetask1"></sequenceFlow>
     <textAnnotation id="textannotation1">
       <text>Message Blocked request received</text>
     </textAnnotation>
@@ -94,10 +96,13 @@
         <omgdc:Bounds height="35.0" width="35.0" x="643.0" y="383.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="noneintermediatethrowevent1" id="BPMNShape_noneintermediatethrowevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="80.0" y="279.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="230.0" y="279.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="72.0" width="105.0" x="95.0" y="261.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
-        <omgdc:Bounds height="50.0" width="100.0" x="208.0" y="251.0"></omgdc:Bounds>
+        <omgdc:Bounds height="50.0" width="100.0" x="198.0" y="133.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="textannotation2" id="BPMNShape_textannotation2">
         <omgdc:Bounds height="50.0" width="100.0" x="808.0" y="317.0"></omgdc:Bounds>
@@ -147,18 +152,22 @@
         <omgdi:waypoint x="660.0" y="247.0"></omgdi:waypoint>
         <omgdi:waypoint x="660.0" y="383.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="flow51" id="BPMNEdge_flow51">
-        <omgdi:waypoint x="55.0" y="296.0"></omgdi:waypoint>
-        <omgdi:waypoint x="80.0" y="296.0"></omgdi:waypoint>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow52" id="BPMNEdge_flow52">
         <omgdi:waypoint x="643.0" y="400.0"></omgdi:waypoint>
-        <omgdi:waypoint x="97.0" y="400.0"></omgdi:waypoint>
-        <omgdi:waypoint x="97.0" y="314.0"></omgdi:waypoint>
+        <omgdi:waypoint x="247.0" y="400.0"></omgdi:waypoint>
+        <omgdi:waypoint x="247.0" y="314.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow55" id="BPMNEdge_flow55">
-        <omgdi:waypoint x="97.0" y="279.0"></omgdi:waypoint>
+        <omgdi:waypoint x="247.0" y="279.0"></omgdi:waypoint>
         <omgdi:waypoint x="247.0" y="225.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow56" id="BPMNEdge_flow56">
+        <omgdi:waypoint x="200.0" y="297.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="296.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow57" id="BPMNEdge_flow57">
+        <omgdi:waypoint x="55.0" y="296.0"></omgdi:waypoint>
+        <omgdi:waypoint x="95.0" y="297.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

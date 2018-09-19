@@ -78,6 +78,7 @@ public class ProcessTestRequestTreatment {
 		variableMap.put("name", "Activiti");
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("requestTreatment", variableMap);
 		
+
 		List<Execution> executions = runtimeService.createExecutionQuery().processInstanceId(processInstance.getId()).list();
 		
 		assertNotSame(executions.size(), 0);
