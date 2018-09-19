@@ -16,7 +16,7 @@ Sample contains unit tests for processes scenarios and uses H2 in test environme
 
 ## Performance and Scaling considerations
 
-You could scale if required on process number using muti tenancy, in our case we use geo areas. About scaling for executor you could scale it using Spring and ActiveMQ for example.
+You could scale if required on process number using muti tenancy, in our case we use geo areas. About scaling for executor you could scale it using Spring and ActiveMQ for example. Also with Activiti 7 will be available a fully distributd cloudy ready environment.
 
 
 ![Process Diagram](https://github.com/antrad1978/ServiceOrientation/blob/master/BPMNOrchestrationMicroservices/TreatmentRequest.png?raw=true)
